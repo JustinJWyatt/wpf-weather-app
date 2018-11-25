@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace WpfWeatherApp.Model
 {
-    public class Clouds
+    public class Clouds : Changeable
     {
         [JsonProperty("all")]
-        public int All { get; set; }
+        public int All
+        {
+            get
+            {
+                return All;
+            }
+            set
+            {
+                All = value; OnPropertyChanged("All");
+            }
+        }
     }
 }

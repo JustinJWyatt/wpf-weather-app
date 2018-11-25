@@ -7,12 +7,34 @@ using System.Threading.Tasks;
 
 namespace WpfWeatherApp.Model
 {
-    public class Wind
+    public class Wind : Changeable
     {
         [JsonProperty("speed")]
-        public float Speed { get; set; }
+        public float Speed
+        {
+            get
+            {
+                return Speed;
+            }
+            set
+            {
+                Speed = value;
+                OnPropertyChanged("Speed");
+            }
+        }
 
         [JsonProperty("deg")]
-        public int Temperature { get; set; }
+        public int Temperature
+        {
+            get
+            {
+                return Temperature;
+            }
+            set
+            {
+                Temperature = value;
+                OnPropertyChanged("Temperature");
+            }
+        }
     }
 }

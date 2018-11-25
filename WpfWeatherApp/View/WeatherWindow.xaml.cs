@@ -29,7 +29,7 @@ namespace WpfWeatherApp.View
 
         public async void GetWeather()
         {
-            var result = await WeatherAPI.GetWeatherInformationAsync("New York");
+            var result = await WeatherAPI.GetWeatherInformationAsync("NewYork", "US");
         }
 
     }

@@ -61,7 +61,13 @@
     <Compile Include="Model\ChangeableProperty.cs" />
     <Compile Include="Model\Clouds.cs" />
     <Compile Include="Model\Coordinate.cs" />
+    <Compile Include="Model\AutocompleteResult.cs" />
     <Compile Include="Model\Main.cs" />
+    <Compile Include="Model\MainTextMatchedSubstring.cs" />
+    <Compile Include="Model\MatchedSubstring.cs" />
+    <Compile Include="Model\Prediction.cs" />
+    <Compile Include="Model\StructuredFormatting.cs" />
+    <Compile Include="Model\Term.cs" />
     <Compile Include="Model\Weather.cs" />
     <Compile Include="Model\WeatherResult.cs" />
     <Compile Include="Model\WeatherSystem.cs" />

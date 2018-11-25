@@ -10,5 +10,17 @@ namespace WpfWeatherApp.ViewModel
     public class WeatherViewModel
     {
         public WeatherResult Weather { get; set; }
+
+        public string Query
+        {
+            get
+            {
+                return Query;
+            }
+            set
+            {
+                Query = value;
+            }
+        }
     }
 }

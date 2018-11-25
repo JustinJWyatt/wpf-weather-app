@@ -17,7 +17,7 @@
 
     <Grid DataContext="{StaticResource vm}">
         <StackPanel Margin="10" DataContext="{Binding WeatherViewModel}">
-            <TextBox />
+            <TextBox Text="{Binding Source={StaticResource vm}, Path=Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Text="{Binding Weather.Name}"
                        Margin="0 20 0 0"
                        FontSize="20"

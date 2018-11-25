@@ -31,6 +31,5 @@ namespace WpfWeatherApp.View
         {
             var result = await WeatherAPI.GetWeatherInformationAsync("NewYork", "US");
         }
-
     }
 }

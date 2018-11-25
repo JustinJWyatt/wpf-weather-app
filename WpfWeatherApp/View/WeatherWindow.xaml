@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfWeatherApp.View"
+        xmlns:vm="clr-namespace:WpfWeatherApp.ViewModel"
         mc:Ignorable="d"
         Title="WeatherWindow" Height="450" Width="800">
 
@@ -11,26 +12,27 @@
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="#555555"/>
         </Style>
+        <vm:WeatherViewModel x:Key="vm"/>
     </Window.Resources>
 
-    <Grid>
-        <StackPanel Margin="10">
+    <Grid DataContext="{StaticResource vm}">
+        <StackPanel Margin="10" DataContext="{Binding WeatherViewModel}">
             <TextBox />
-            <TextBlock Text="Paris"
+            <TextBlock Text="{Binding Weather.Name}"
                        Margin="0 20 0 0"
                        FontSize="20"
                        FontWeight="Bold"/>
-            <TextBlock Text="21 °C"
+            <TextBlock Text="{Binding Weather.Main.Temperature}"
                        FontSize="40"
                        FontWeight="ExtraBold"
                        Margin="0 30 0 0"/>
             <TextBlock Text="Sunny"
                        FontSize="15"
                        FontWeight="DemiBold"/>
-            <TextBlock Text="UV 7"
+            <TextBlock Text="{Binding Weather.Visibility}"
                        Margin="0 50 0 0"/>
-            <TextBlock Text="Prec 65%"/>
-            <TextBlock Text="NE 9 Kmph"/>
+            <TextBlock Text="{Binding Weather.Main.Humidity}"/>
+            <TextBlock Text="{Binding Weather.Wind.Speed}"/>
         </StackPanel>
     </Grid>
 </Window>

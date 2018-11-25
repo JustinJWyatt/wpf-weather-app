@@ -67,6 +67,7 @@
     <Compile Include="Model\WeatherSystem.cs" />
     <Compile Include="Model\Wind.cs" />
     <Compile Include="ViewModel\WeatherAPI.cs" />
+    <Compile Include="ViewModel\WeatherViewModel.cs" />
     <Compile Include="View\WeatherWindow.xaml.cs">
       <DependentUpon>WeatherWindow.xaml</DependentUpon>
     </Compile>

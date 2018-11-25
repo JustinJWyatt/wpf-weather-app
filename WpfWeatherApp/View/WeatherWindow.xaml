@@ -18,6 +18,13 @@
     <Grid DataContext="{StaticResource vm}">
         <StackPanel Margin="10" DataContext="{Binding WeatherViewModel}">
             <TextBox Text="{Binding Source={StaticResource vm}, Path=Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <ListView Height="100" ItemsSource="{Binding Source={StaticResource vm}, Path=CitySearch.Predictions}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding StructuredFormatting.MainText}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <TextBlock Text="{Binding Weather.Name}"
                        Margin="0 20 0 0"
                        FontSize="20"

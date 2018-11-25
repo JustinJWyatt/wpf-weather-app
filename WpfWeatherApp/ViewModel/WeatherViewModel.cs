@@ -7,20 +7,45 @@ using WpfWeatherApp.Model;
 
 namespace WpfWeatherApp.ViewModel
 {
-    public class WeatherViewModel
+    public class WeatherViewModel : Changeable
     {
         public WeatherResult Weather { get; set; }
+
+        private AutocompleteResult citySearch;
+
+        public AutocompleteResult CitySearch
+        {
+            get
+            {
+                return citySearch;
+            }
+            set
+            {
+                citySearch = value;
+                OnPropertyChanged("CitySearch");
+            }
+        }
+
+        private string query;
 
         public string Query
         {
             get
             {
-                return Query;
+                return query;
             }
             set
             {
-                Query = value;
+                query = value;
+
+                GetCities();
             }
         }
+
+        public async void GetCities()
+        {
+            CitySearch = await WeatherAPI.GetAutoCompleteAsync(Query);
+        }
+
     }
 }

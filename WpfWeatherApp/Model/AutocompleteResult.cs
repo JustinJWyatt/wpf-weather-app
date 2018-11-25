@@ -1,16 +1,14 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using WpfWeatherApp.ViewModel;
 
 namespace WpfWeatherApp.Model
 {
     public class AutocompleteResult
     {
         [JsonProperty("predictions")]
-        public List<Prediction> Predictions { get; set; }
+        public ObservableCollection<Prediction> Predictions { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }

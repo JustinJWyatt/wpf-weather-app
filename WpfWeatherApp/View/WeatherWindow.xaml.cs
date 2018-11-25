@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfWeatherApp.ViewModel;
 
 namespace WpfWeatherApp.View
 {
@@ -22,6 +23,14 @@ namespace WpfWeatherApp.View
         public WeatherWindow()
         {
             InitializeComponent();
+
+            GetWeather();
         }
+
+        public async void GetWeather()
+        {
+            var result = await WeatherAPI.GetWeatherInformationAsync("New York");
+        }
+
     }
 }

@@ -11,10 +11,10 @@ namespace WpfWeatherApp.ViewModel
 {
     public class WeatherAPI
     {
-        public const string API_KEY = "";
-        public const string BASE_URL = "";
+        public const string API_KEY = "727c7bf5d7906d46bd35ea902a53bf1f";
+        public const string BASE_URL = "api.openweathermap.org/data/2.5/weather?q={0}&appid={1}";
 
-        public async Task<WeatherResult> GetWeatherInformationAsync(string city)
+        public static async Task<WeatherResult> GetWeatherInformationAsync(string city)
         {
             var result = new WeatherResult();
 

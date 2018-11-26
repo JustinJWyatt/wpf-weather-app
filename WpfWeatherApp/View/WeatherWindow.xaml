@@ -18,28 +18,30 @@
     <Grid DataContext="{StaticResource vm}">
         <StackPanel Margin="10" DataContext="{Binding WeatherViewModel}">
             <TextBox Text="{Binding Source={StaticResource vm}, Path=Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <ListView Height="100" ItemsSource="{Binding Source={StaticResource vm}, Path=CitySearch.Predictions}">
+            <ListView Height="100" 
+                      ItemsSource="{Binding Source={StaticResource vm}, Path=CitySearch.Predictions}"
+                      SelectedItem="{Binding Source={StaticResource vm}, Path=SelectedResult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding StructuredFormatting.MainText}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <TextBlock Text="{Binding Weather.Name}"
+            <TextBlock Text="{Binding Result.Name}"
                        Margin="0 20 0 0"
                        FontSize="20"
                        FontWeight="Bold"/>
-            <TextBlock Text="{Binding Weather.Main.Temperature}"
+            <TextBlock Text="{Binding Result.Main.Temperature}"
                        FontSize="40"
                        FontWeight="ExtraBold"
                        Margin="0 30 0 0"/>
-            <TextBlock Text="Sunny"
+            <!--<TextBlock Text="Sunny"
                        FontSize="15"
-                       FontWeight="DemiBold"/>
-            <TextBlock Text="{Binding Weather.Visibility}"
+                       FontWeight="DemiBold"/>-->
+            <TextBlock Text="{Binding Result.Visibility}"
                        Margin="0 50 0 0"/>
-            <TextBlock Text="{Binding Weather.Main.Humidity}"/>
-            <TextBlock Text="{Binding Weather.Wind.Speed}"/>
+            <TextBlock Text="{Binding Result.Main.Humidity}"/>
+            <TextBlock Text="{Binding Result.Wind.Speed}"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -9,31 +9,35 @@ namespace WpfWeatherApp.Model
 {
     public class Wind : Changeable
     {
+        private float speed;
+
         [JsonProperty("speed")]
         public float Speed
         {
             get
             {
-                return Speed;
+                return speed;
             }
             set
             {
-                Speed = value;
-                OnPropertyChanged("Speed");
+                speed = value;
+                //OnPropertyChanged("Speed");
             }
         }
+
+        private int temperature;
 
         [JsonProperty("deg")]
         public int Temperature
         {
             get
             {
-                return Temperature;
+                return temperature;
             }
             set
             {
-                Temperature = value;
-                OnPropertyChanged("Temperature");
+                temperature = value;
+                //OnPropertyChanged("Temperature");
             }
         }
     }

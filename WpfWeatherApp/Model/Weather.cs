@@ -4,59 +4,67 @@ namespace WpfWeatherApp.Model
 {
     public class Weather : Changeable
     {
+        private int id;
+
         [JsonProperty("id")]
         public int Id
         {
             get
             {
-                return Id;
+                return id;
             }
             set
             {
-                Id = value;
-                OnPropertyChanged("Id");
+                id = value;
+                //OnPropertyChanged("Id");
             }
         }
+
+        private string main;
 
         [JsonProperty("main")]
         public string Main
         {
             get
             {
-                return Main;
+                return main;
             }
             set
             {
-                Main = value;
-                OnPropertyChanged("Main");
+                main = value;
+                //OnPropertyChanged("Main");
             }
         }
+
+        private string description;
 
         [JsonProperty("description")]
         public string Description
         {
             get
             {
-                return Description;
+                return description;
             }
             set
             {
-                Description = value;
-                OnPropertyChanged("Description");
+                description = value;
+                //OnPropertyChanged("Description");
             }
         }
+
+        private string icon;
 
         [JsonProperty("icon")]
         public string Icon
         {
             get
             {
-                return Icon;
+                return icon;
             }
             set
             {
-                Icon = value;
-                OnPropertyChanged("Icon");
+                icon = value;
+                //OnPropertyChanged("Icon");
             }
         }
     }

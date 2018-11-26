@@ -9,73 +9,83 @@ namespace WpfWeatherApp.Model
 {
     public class Main : Changeable
     {
+        private float temperature;
+
         [JsonProperty("temp")]
         public float Temperature
         {
             get
             {
-                return this.Temperature;
+                return temperature;
             }
             set
             {
-                Temperature = value;
-                OnPropertyChanged("Temperautre");
+                temperature = value;
+                //OnPropertyChanged("Temperautre");
             }
         }
+
+        private int pressure;
 
         [JsonProperty("pressure")]
         public int Pressure
         {
             get
             {
-                return Pressure;
+                return pressure;
             }
             set
             {
-                Pressure = value;
-                OnPropertyChanged("Pressure");
+                pressure = value;
+                //OnPropertyChanged("Pressure");
             }
         }
+
+        private int humidity;
 
         [JsonProperty("humidity")]
         public int Humidity
         {
             get
             {
-                return Humidity;
+                return humidity;
             }
             set
             {
-                Humidity = value;
-                OnPropertyChanged("Humidity");
+                humidity = value;
+                //OnPropertyChanged("Humidity");
             }
         }
+
+        private float minTemperature;
 
         [JsonProperty("temp_min")]
         public float MinTemperature
         {
             get
             {
-                return MinTemperature;
+                return minTemperature;
             }
             set
             {
-                MinTemperature = value;
-                OnPropertyChanged("MinTemperature");
+                minTemperature = value;
+                //OnPropertyChanged("MinTemperature");
             }
         }
+
+        private float maxTemperature;
 
         [JsonProperty("temp_max")]
         public float MaxTemperature
         {
             get
             {
-                return MaxTemperature;
+                return maxTemperature;
             }
             set
             {
-                MaxTemperature = value;
-                OnPropertyChanged("MaxTemperature");
+                maxTemperature = value;
+                //OnPropertyChanged("MaxTemperature");
             }
         }
     }

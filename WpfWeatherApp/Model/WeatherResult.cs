@@ -1,163 +1,201 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace WpfWeatherApp.Model
 {
     public class WeatherResult : Changeable
     {
+        private int id;
+
         [JsonProperty("id")]
         public int Id
         {
             get
             {
-                return Id;
+                return id;
             }
             set
             {
-                Id = value;
-                OnPropertyChanged("Id");
+                id = value;
+                //OnPropertyChanged("Id");
             }
         }
+
+        private int cod;
+
+        [JsonProperty("cod")]
+        public int Cod
+        {
+            get
+            {
+                return cod;
+            }
+            set
+            {
+                cod = value;
+                //OnPropertyChanged("Cod");
+            }
+        }
+
+        private string name;
 
         [JsonProperty("name")]
         public string Name
         {
             get
             {
-                return Name;
+                return name;
             }
             set
             {
-                Name = value;
-                OnPropertyChanged("Name");
+                name = value;
+                //OnPropertyChanged("Name");
             }
         }
 
+        private DateTime time;
+
         [JsonProperty("dt")]
+        [JsonIgnore]
         public DateTime Time
         {
             get
             {
-                return Time;
+                return time;
             }
             set
             {
-                Time = value;
-                OnPropertyChanged("Time");
+                time = value;
+                //OnPropertyChanged("Time");
             }
         }
+
+        private Coordinate coordinate;
 
         [JsonProperty("coord")]
         public Coordinate Coordinate
         {
             get
             {
-                return Coordinate;
+                return coordinate;
             }
             set
             {
-                Coordinate = value;
-                OnPropertyChanged("Coordinate");
+                coordinate = value;
+                //OnPropertyChanged("Coordinate");
             }
         }
+
+        private List<Weather> weather;
 
         [JsonProperty("weather")]
         public List<Weather> Weather
         {
             get
             {
-                return Weather;
+                return weather;
             }
             set
             {
-                Weather = value;
-                OnPropertyChanged("Weather");
+                weather = value;
+                //OnPropertyChanged("Weather");
             }
         }
+
+        private string baseString;
 
         [JsonProperty("base")]
         public string Base
         {
             get
             {
-                return Base;
+                return baseString;
             }
             set
             {
-                Base = value;
-                OnPropertyChanged("Base");
+                baseString = value;
+                //OnPropertyChanged("Base");
             }
         }
+
+        private Main main;
 
         [JsonProperty("main")]
         public Main Main
         {
             get
             {
-                return Main;
+                return main;
             }
             set
             {
-                Main = value;
-                OnPropertyChanged("Main");
+                main = value;
+                //OnPropertyChanged("Main");
             }
         }
+
+        private int visibility;
 
         [JsonProperty("visibility")]
         public int Visibility
         {
             get
             {
-                return Visibility;
+                return visibility;
             }
             set
             {
-                Visibility = value;
-                OnPropertyChanged("Visibility");
+                visibility = value;
+                //OnPropertyChanged("Visibility");
             }
         }
+
+        private Wind wind;
 
         [JsonProperty("wind")]
         public Wind Wind
         {
             get
             {
-                return Wind;
+                return wind;
             }
             set
             {
-                Wind = value;
-                OnPropertyChanged("Wind");
+                wind = value;
+                //OnPropertyChanged("Wind");
             }
         }
+
+        private Clouds clouds;
 
         [JsonProperty("clouds")]
         public Clouds Clouds
         {
             get
             {
-                return Clouds;
+                return clouds;
             }
             set
             {
-                Clouds = value;
-                OnPropertyChanged("Clouds");
+                clouds = value;
+                //OnPropertyChanged("Clouds");
             }
         }
 
+        private System system;
+
         [JsonProperty("sys")]
-        public WeatherSystem WeatherSystem
+        public System System
         {
             get
             {
-                return WeatherSystem;
+                return system;
             }
             set
             {
-                WeatherSystem = value;
-                OnPropertyChanged("WeatherSystem");
+                system = value;
+                //OnPropertyChanged("System");
             }
         }
     }

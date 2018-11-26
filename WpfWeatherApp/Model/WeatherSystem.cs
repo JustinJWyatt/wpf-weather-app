@@ -7,89 +7,103 @@ using System.Threading.Tasks;
 
 namespace WpfWeatherApp.Model
 {
-    public class WeatherSystem : Changeable
+    public class System : Changeable
     {
+        private int id;
+
         [JsonProperty("id")]
         public int Id
         {
             get
             {
-                return Id;
+                return id;
             }
             set
             {
-                Id = value;
-                OnPropertyChanged("Id");
+                id = value;
+                //OnPropertyChanged("Id");
             }
         }
+
+        private int type;
 
         [JsonProperty("type")]
         public int Type
         {
             get
             {
-                return Type;
+                return type;
             }
             set
             {
-                Type = value;
-                OnPropertyChanged("Type");
+                type = value;
+                //OnPropertyChanged("Type");
             }
         }
+
+        private decimal message;
 
         [JsonProperty("message")]
         public decimal Message
         {
             get
             {
-                return Message;
+                return message;
             }
             set
             {
-                Message = value;
-                OnPropertyChanged("Message");
+                message = value;
+                //OnPropertyChanged("Message");
             }
         }
+
+        private string country;
 
         [JsonProperty("country")]
         public string Country
         {
             get
             {
-                return Country;
+                return country;
             }
             set
             {
-                Country = value;
-                OnPropertyChanged("Country");
+                country = value;
+                //OnPropertyChanged("Country");
             }
         }
 
+        private DateTime sunrise;
+
         [JsonProperty("sunrise")]
+        [JsonIgnore]
         public DateTime Sunrise
         {
             get
             {
-                return Sunrise;
+                return sunrise;
             }
             set
             {
-                Sunrise = value;
-                OnPropertyChanged("Sunrise");
+                sunrise = value;
+                //OnPropertyChanged("Sunrise");
             }
         }
 
+        private DateTime sunset;
+
         [JsonProperty("sunset")]
+        [JsonIgnore]
         public DateTime Sunset
         {
             get
             {
-                return Sunset;
+                return sunset;
             }
             set
             {
-                Sunset = value;
-                OnPropertyChanged("Sunset");
+                sunset = value;
+                //OnPropertyChanged("Sunset");
             }
         }
     }

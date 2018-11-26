@@ -1,37 +1,39 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WpfWeatherApp.Model
 {
     public class Coordinate : Changeable
     {
+        private float longitude;
+
         [JsonProperty("lon")]
-        public int Longitude
+        public float Longitude
         {
             get
             {
-                return this.Longitude;
+                return longitude;
             }
             set
             {
-                OnPropertyChanged("Longitutde");
+                longitude = value;
+
+                //OnPropertyChanged("Longitude");
             }
         }
 
+        private float latitude;
+
         [JsonProperty("lat")]
-        public int Latitude
+        public float Latitude
         {
             get
             {
-                return this.Latitude;
+                return latitude;
             }
             set
             {
-                this.Latitude = value; OnPropertyChanged("Latitude");
+                latitude = value;
+                //OnPropertyChanged("Latitude");
             }
         }
     }

@@ -23,13 +23,6 @@ namespace WpfWeatherApp.View
         public WeatherWindow()
         {
             InitializeComponent();
-
-            GetWeather();
-        }
-
-        public async void GetWeather()
-        {
-            var result = await WeatherAPI.GetWeatherInformationAsync("NewYork", "US");
         }
     }
 }

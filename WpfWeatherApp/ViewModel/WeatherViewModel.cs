@@ -1,4 +1,5 @@
 ﻿using WpfWeatherApp.Model;
+using WpfWeatherApp.ViewModel.Commands;
 
 namespace WpfWeatherApp.ViewModel
 {
@@ -64,6 +65,13 @@ namespace WpfWeatherApp.ViewModel
 
                 GetWeather();
             }
+        }
+
+        public RefreshCommand RefreshCommand { get; set; }
+
+        public WeatherViewModel()
+        {
+            RefreshCommand = new RefreshCommand(this);
         }
 
         private async void GetCities()

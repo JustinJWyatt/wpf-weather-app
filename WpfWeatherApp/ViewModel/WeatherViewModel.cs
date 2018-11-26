@@ -71,7 +71,7 @@ namespace WpfWeatherApp.ViewModel
             CitySearch = await WeatherAPI.GetAutoCompleteAsync(Query);
         }
 
-        private async void GetWeather()
+        public async void GetWeather()
         {
             var city = SelectedResult.Description.Replace(" ", string.Empty);
 
